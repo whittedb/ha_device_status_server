@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "formatters": {
+    "simple": {
+      "format": "%(levelname)s %(message)s",
+      "datefmt": "%Y%m%d %H:%M:%S"
+    },
+    "detailed": {
+      "format": "%(asctime)s:%(levelname)s:%(threadName)-9s:%(module)s.%(funcName)s - %(message)s",
+      "datefmt": "%Y%m%d %H:%M:%S"
+    }
+  },
+  "handlers": {
+    "console": {
+      "class": "logging.StreamHandler",
+      "level": "DEBUG",
+      "formatter": "detailed",
+      "stream": "ext://sys.stdout"
+    },
+    "dev_rotate_file": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "filename": "ha_lighting_status_server.log",
+      "mode": "w",
+      "maxBytes": 1048576,
+      "backupCount": 5,
+      "level": "DEBUG",
+      "formatter": "detailed"
+    },
+    "rotate_file": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "filename": "e:/logs/ha_lighting_status_server.log",
+      "mode": "w",
+      "maxBytes": 1048576,
+      "backupCount": 5,
+      "level": "DEBUG",
+      "formatter": "detailed"
+    }
+  },
+  "root": {
+    "level": "DEBUG",
+    "handlers": [
+      "console",
+      "dev_rotate_file"
+    ]
+  }
+}
