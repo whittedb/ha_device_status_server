@@ -113,6 +113,7 @@ async def main(url, username, password, tls_ver):
 if __name__ == "__main__":
     _LOGGER.info("Starting ha_device_status_server %s ..." % versioning.VERSION)
     _LOGGER.info(f"ISY URL: {settings.ISY_URL}, TLS Version: {settings.ISY_TLS_VERSION}")
+    _LOGGER.info("Log Level: %s" % settings.LOG_LEVEL)
 
     with couchdb_admin_session() as session:
         databases = session.all_dbs()

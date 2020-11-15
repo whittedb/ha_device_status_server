@@ -5,10 +5,6 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO")
-try:
-    LOG_LEVEL = int(LOG_LEVEL)
-except ValueError:
-    pass
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_HOST = os.environ.get("AWS_HOST")
